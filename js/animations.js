@@ -99,4 +99,21 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(typeLoop, 200);
     }
   }
+
+  // 4. Profil Etrafında Dönen Parlayan Işık Halkası (Kesintisiz Dönüş Motoru)
+  const orbitContainer = document.querySelector('.avatar-orbit-container');
+  if (orbitContainer) {
+    let angle = 0;
+    let lastTime = performance.now();
+    const speed = 360 / 2200; // 2.2 saniyede tam tur (hızlı & akıcı)
+
+    function stepOrbit(now) {
+      const delta = now - lastTime;
+      lastTime = now;
+      angle = (angle + speed * delta) % 360;
+      orbitContainer.style.transform = `rotate(${angle}deg)`;
+      requestAnimationFrame(stepOrbit);
+    }
+    requestAnimationFrame(stepOrbit);
+  }
 });

@@ -130,14 +130,30 @@
    Profil Etrafında Dönen Hızlı & Parlayan Işık Halkası
    -------------------------------------------------------------------------- */
 .avatar-orbit-container {
-  animation: rotate-orbit 2.4s linear infinite;
+  animation: rotate-orbit 2.2s linear infinite !important;
+  -webkit-animation: rotate-orbit 2.2s linear infinite !important;
+  transform-origin: 50% 50% !important;
+  -webkit-transform-origin: 50% 50% !important;
+}
+
+@-webkit-keyframes rotate-orbit {
+  from {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes rotate-orbit {
   from {
+    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   to {
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
@@ -237,7 +253,6 @@
     animation: none !important;
   }
 
-  .avatar-orbit-container,
   .ambient-orb-1,
   .ambient-orb-2,
   .ambient-orb-3,

@@ -518,11 +518,18 @@ ul {
 /* Dönen Hızlı & Parlayan Işık Halkası (Orbiting Border Beam & Particle) */
 .avatar-orbit-container {
   position: absolute;
-  inset: -8px;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
   border-radius: 50%;
   pointer-events: none;
   z-index: 3;
   will-change: transform;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  animation: rotate-orbit 2.2s linear infinite;
+  -webkit-animation: rotate-orbit 2.2s linear infinite;
 }
 
 .avatar-orbit-ring {
