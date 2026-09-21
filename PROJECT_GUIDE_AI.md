@@ -30,7 +30,6 @@ c:\Users\Samet\Desktop\Portfolyo\
 ├── about.html          # Hakkımda: Biyografi, öne çıkan özellikler, animasyonlu bar yetenekler
 ├── experience.html     # Deneyim & Eğitim: İki ayrı dikey zaman çizelgesi (timeline)
 ├── projects.html       # Projeler: Kart ızgarası, etiketler, GitHub ve Canlı linkler
-├── blog.html           # Blog: Makale kartları, okuma süreleri, özetler
 ├── contact.html        # İletişim: İletişim kartı, Formspree uyumlu form
 │
 ├── css/
@@ -113,20 +112,6 @@ Tüm HTML sayfalarında `<nav class="navbar" id="navbar">` bulunur. Aktif olan s
       <a href="https://github.com/samet-karaoz/..." class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://..." class="project-link" target="_blank" rel="noopener noreferrer">Canlı Önizleme</a>
     </div>
-  </div>
-</article>
-```
-
-### Yeni Blog Yazısı Eklemek İçin (`blog.html`):
-`<div class="blog-grid">` içerisine:
-```html
-<article class="blog-card card reveal" data-delay="150">
-  <div class="blog-card-date">21 Eylül 2026</div>
-  <h3 class="blog-card-title">Yazı Başlığı</h3>
-  <p class="blog-card-excerpt">Yazının kısa 1-2 cümlelik özeti...</p>
-  <div class="blog-card-footer">
-    <span>4 dk okuma</span>
-    <a href="#" class="read-more">Devamını oku &rarr;</a>
   </div>
 </article>
 ```

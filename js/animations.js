@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let titleIndex = 0;
       let charIndex = 0;
       let isDeleting = false;
-      let typingDelay = 110;
+      let typingDelay = 70;
 
       const typeLoop = () => {
         const currentTitle = titles[titleIndex];
@@ -76,27 +76,27 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isDeleting) {
           typingElement.textContent = currentTitle.substring(0, charIndex - 1);
           charIndex--;
-          typingDelay = 50;
+          typingDelay = 35;
         } else {
           typingElement.textContent = currentTitle.substring(0, charIndex + 1);
           charIndex++;
-          typingDelay = 100;
+          typingDelay = 65;
         }
 
         if (!isDeleting && charIndex === currentTitle.length) {
-          typingDelay = 2200; // Kelime bittiğinde bekleme
+          typingDelay = 1500; // Kelime bittiğinde bekleme
           isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
           isDeleting = false;
           titleIndex = (titleIndex + 1) % titles.length;
-          typingDelay = 400; // Yeni kelimeye geçmeden önce kısa mola
+          typingDelay = 250; // Yeni kelimeye geçmeden önce kısa mola
         }
 
         setTimeout(typeLoop, typingDelay);
       };
 
-      // Küçük bir gecikmeyle başlat
-      setTimeout(typeLoop, 400);
+      // Kısa bir gecikmeyle başlat
+      setTimeout(typeLoop, 200);
     }
   }
 });

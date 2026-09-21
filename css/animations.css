@@ -8,9 +8,9 @@
    -------------------------------------------------------------------------- */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -19,12 +19,12 @@
   transform: translateY(0);
 }
 
-/* Kademeli Geliş (Stagger Delays) */
-.reveal[data-delay="1"], .reveal[data-delay="100"] { transition-delay: 0.1s; }
-.reveal[data-delay="2"], .reveal[data-delay="200"] { transition-delay: 0.2s; }
-.reveal[data-delay="3"], .reveal[data-delay="300"] { transition-delay: 0.3s; }
-.reveal[data-delay="4"], .reveal[data-delay="400"] { transition-delay: 0.4s; }
-.reveal[data-delay="5"], .reveal[data-delay="500"] { transition-delay: 0.5s; }
+/* Kademeli Geliş (Hızlı Stagger Delays) */
+.reveal[data-delay="1"], .reveal[data-delay="100"] { transition-delay: 0.07s; }
+.reveal[data-delay="2"], .reveal[data-delay="200"] { transition-delay: 0.14s; }
+.reveal[data-delay="3"], .reveal[data-delay="300"] { transition-delay: 0.21s; }
+.reveal[data-delay="4"], .reveal[data-delay="400"] { transition-delay: 0.28s; }
+.reveal[data-delay="5"], .reveal[data-delay="500"] { transition-delay: 0.35s; }
 
 /* --------------------------------------------------------------------------
    CSS Scroll-Driven Animations (Modern Tarayıcılar - Progressive Enhancement)
@@ -115,30 +115,46 @@
 }
 
 .floating-anim {
-  animation: float-slow 4.5s ease-in-out infinite;
+  animation: float-slow 2.6s ease-in-out infinite;
 }
 
 .floating-reverse {
-  animation: float-reverse 5s ease-in-out infinite;
+  animation: float-reverse 2.9s ease-in-out infinite;
 }
 
 .pulsing-ring {
-  animation: pulse-ring 3.5s infinite;
+  animation: pulse-ring 2.2s infinite;
 }
 
 /* --------------------------------------------------------------------------
-   Akıcı Slow Ambient Arka Plan Animasyonları
+   Profil Etrafında Dönen Hızlı & Parlayan Işık Halkası
+   -------------------------------------------------------------------------- */
+.avatar-orbit-container {
+  animation: rotate-orbit 2.4s linear infinite;
+}
+
+@keyframes rotate-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Akıcı ve Hızlandırılmış Ambient Arka Plan Animasyonları
    -------------------------------------------------------------------------- */
 .ambient-orb-1 {
-  animation: float-ambient-1 24s ease-in-out infinite alternate;
+  animation: float-ambient-1 9s ease-in-out infinite alternate;
 }
 
 .ambient-orb-2 {
-  animation: float-ambient-2 28s ease-in-out infinite alternate;
+  animation: float-ambient-2 11s ease-in-out infinite alternate;
 }
 
 .ambient-orb-3 {
-  animation: float-ambient-3 20s ease-in-out infinite alternate;
+  animation: float-ambient-3 8s ease-in-out infinite alternate;
 }
 
 @keyframes float-ambient-1 {
@@ -221,6 +237,7 @@
     animation: none !important;
   }
 
+  .avatar-orbit-container,
   .ambient-orb-1,
   .ambient-orb-2,
   .ambient-orb-3,

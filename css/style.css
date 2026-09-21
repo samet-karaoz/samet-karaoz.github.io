@@ -508,16 +508,59 @@ ul {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid rgba(108, 99, 255, 0.5);
+  border: 4px solid rgba(108, 99, 255, 0.4);
   position: relative;
   z-index: 2;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(108, 99, 255, 0.3);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.65), 0 0 35px rgba(108, 99, 255, 0.25);
   background: var(--bg-card);
+}
+
+/* Dönen Hızlı & Parlayan Işık Halkası (Orbiting Border Beam & Particle) */
+.avatar-orbit-container {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.avatar-orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 210deg,
+    rgba(108, 99, 255, 0.2) 260deg,
+    rgba(0, 200, 255, 0.75) 320deg,
+    rgba(255, 255, 255, 0.95) 356deg,
+    rgba(255, 255, 255, 1) 360deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #fff calc(100% - 3px));
+  filter: drop-shadow(0 0 10px rgba(0, 200, 255, 0.85)) drop-shadow(0 0 18px rgba(108, 99, 255, 0.6));
+}
+
+.avatar-orbit-sparkle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 11px;
+  height: 11px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px 3px #ffffff,
+    0 0 22px 6px rgba(0, 200, 255, 0.95),
+    0 0 38px 12px rgba(108, 99, 255, 0.8);
 }
 
 .floating-badge {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   align-items: center;
   gap: 0.5rem;

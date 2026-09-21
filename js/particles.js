@@ -37,15 +37,15 @@
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        // Dingin ve yavaş akış hızları
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
+        // Canlı ve akıcı hareket hızları
+        vx: (Math.random() - 0.5) * 0.7,
+        vy: (Math.random() - 0.5) * 0.7,
         baseRadius: Math.random() * 1.5 + 0.8,
         radius: Math.random() * 1.5 + 0.8,
         // Renk paleti (Mor ve Turkuaz tonları)
         color: isCyan ? 'rgba(0, 200, 255,' : 'rgba(108, 99, 255,',
         baseAlpha: Math.random() * 0.35 + 0.25,
-        pulseSpeed: Math.random() * 0.02 + 0.008,
+        pulseSpeed: Math.random() * 0.035 + 0.015,
         pulseVal: Math.random() * Math.PI
       });
     }

@@ -15,9 +15,8 @@ Portfolyo/
 ├── index.html              # Ana Sayfa: Hero alanı, interaktif parçacık arka planı, daktilo animasyonu
 ├── about.html              # Hakkımda: Biyografi, çalışma prensipleri, animasyonlu yetenek çubukları
 ├── experience.html         # Deneyim: İş/proje tecrübeleri ve eğitim zaman çizelgesi (Timeline)
-├── projects.html           # Projeler: GitHub projeleri (Motor Galerisi, Asphera Website vb.)
-├── blog.html               # Blog: Yazılım notları ve teknik yazılar listesi
-├── contact.html            # İletişim: İletişim bilgileri ve işlevsel iletişim formu
+├── projects.html           # Projeler: Gerçek GitHub projeleri ve kişisel portfolyo platformu
+├── contact.html            # İletişim: İletişim bilgileri ve işlevsel Formspree iletişim formu
 ├── css/
 │   ├── style.css           # Ana stil dosyası, CSS Custom Properties (değişkenler), tipografi, bileşenler
 │   ├── animations.css      # Scroll reveal, hover efektleri, keyframes, prefers-reduced-motion desteği
