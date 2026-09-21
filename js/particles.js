@@ -9,7 +9,6 @@
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let particles = [];
   let animationFrameId;
@@ -153,12 +152,7 @@
   // Başlatma
   resizeCanvas();
   initParticles();
-
-  if (isReducedMotion) {
-    draw(); // Erişilebilirlik için tek sabit kare
-  } else {
-    loop();
-  }
+  loop();
 
   // Fare Hareketi Dinleyicileri (Sadece masaüstü / pointer aygıtları için)
   const heroSection = canvas.closest('.hero') || window;
@@ -183,9 +177,6 @@
     resizeTimer = setTimeout(() => {
       resizeCanvas();
       initParticles();
-      if (isReducedMotion) {
-        draw();
-      }
     }, 150);
   }, { passive: true });
 })();

@@ -236,48 +236,10 @@
 }
 
 /* --------------------------------------------------------------------------
-   Erişilebilirlik - Hareket Azaltma (prefers-reduced-motion)
+   Erişilebilirlik - Hareket Duyarlılığı (Yalnızca ani sarsıntıları engeller)
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto !important;
-  }
-
-  .reveal {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .reveal-scroll {
-    animation: none !important;
-  }
-
-  .ambient-orb-1,
-  .ambient-orb-2,
-  .ambient-orb-3,
-  .floating-anim,
-  .floating-reverse,
-  .pulsing-ring {
-    animation: none !important;
-  }
-
-  .scroll-indicator .wheel {
-    animation: none !important;
-  }
-
-  .typing-text {
-    animation: none !important;
-    border-right-color: var(--accent);
-  }
-
-  .skill-fill {
-    transition: none !important;
-  }
-
-  .card:hover,
-  .highlight-box:hover,
-  .btn:hover {
-    transform: none !important;
+    scroll-behavior: auto;
   }
 }
