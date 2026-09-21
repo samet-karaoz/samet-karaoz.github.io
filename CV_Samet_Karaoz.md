@@ -73,5 +73,5 @@ Gürpınar İMKB Lisesi Yazılım Geliştirme ve Amasya Üniversitesi Bilgisayar
 
 ## 🤝 REFERANSLAR
 
-- **Sertaç Erdağı** — Getap Gelişim Takip Programı Kurucusu (Teknopark)
-- **Deniz Yıldız** — Beylikdüzü Belediyesi • Şef
+- **Deniz Yıldız** — Düzce Devlet Su İşleri Şube Müdürü | İletişim: +90 535 246 25 25
+- **Sertaç Erdağı** — Düzce Üniversitesi Yapı İşleri ve Teknik Daire Başkanı | İletişim: +90 532 710 18 95
