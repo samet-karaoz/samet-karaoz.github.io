@@ -1,0 +1,235 @@
+/* ==========================================================================
+   Samet Karaöz - Portfolyo Web Sitesi
+   Duyarlı Tasarım (responsive.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Tablet & Küçük Ekranlar (Maksimum 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .section {
+    padding: 5.5rem 0 3.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 240px 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Mobil & Dikey Tablet (Maksimum 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
+
+  /* Hamburger Menü Göster */
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.open .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.open .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+  /* Mobil Çekmece Menü (Drawer) */
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(300px, 80vw);
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--bg-secondary);
+    border-left: 1px solid var(--border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5.5rem 2rem 2rem;
+    gap: 1.5rem;
+    transition: right var(--transition);
+    box-shadow: -10px 0 35px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+
+  .nav-menu.open {
+    right: 0;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0;
+  }
+
+  /* Gridleri Tek Sütuna İndir */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: left;
+  }
+
+  .about-image-wrapper {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .projects-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hero Bölümü Uyum */
+  .hero {
+    padding-top: calc(var(--nav-height) + 1.5rem);
+    padding-bottom: 3rem;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    order: 2;
+  }
+
+  .hero-image-col {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+    justify-content: center;
+  }
+
+  .hero-pills {
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 1.25rem;
+    text-align: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Küçük Ekranlı Mobil Cihazlar (Maksimum 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .section {
+    padding: 4.5rem 0 3rem;
+  }
+
+  .section-heading {
+    font-size: 1.85rem;
+  }
+
+  .hero-avatar-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .badge-top-left {
+    left: -15px;
+    top: -5px;
+    font-size: 0.75rem;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .badge-bottom-right {
+    right: -15px;
+    bottom: -5px;
+    font-size: 0.75rem;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .hero-name {
+    font-size: 2.1rem;
+  }
+
+  .hero-title {
+    font-size: 1.2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-item {
+    padding-left: 1rem;
+  }
+
+  .timeline-item::before {
+    left: -1.5rem;
+  }
+
+  .card {
+    padding: 1.4rem;
+  }
+
+  .project-card-image {
+    margin: -1.4rem -1.4rem 1.2rem -1.4rem;
+    width: calc(100% + 2.8rem);
+  }
+}

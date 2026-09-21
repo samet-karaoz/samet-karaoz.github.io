@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Samet Karaöz - Portfolyo Web Sitesi
+   Animasyon Stilleri (animations.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Scroll Reveal (IntersectionObserver Tabanlı)
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Kademeli Geliş (Stagger Delays) */
+.reveal[data-delay="1"], .reveal[data-delay="100"] { transition-delay: 0.1s; }
+.reveal[data-delay="2"], .reveal[data-delay="200"] { transition-delay: 0.2s; }
+.reveal[data-delay="3"], .reveal[data-delay="300"] { transition-delay: 0.3s; }
+.reveal[data-delay="4"], .reveal[data-delay="400"] { transition-delay: 0.4s; }
+.reveal[data-delay="5"], .reveal[data-delay="500"] { transition-delay: 0.5s; }
+
+/* --------------------------------------------------------------------------
+   CSS Scroll-Driven Animations (Modern Tarayıcılar - Progressive Enhancement)
+   -------------------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  .reveal-scroll {
+    animation: reveal-view-effect linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+  }
+
+  @keyframes reveal-view-effect {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Keyframes
+   -------------------------------------------------------------------------- */
+/* Fare Kaydırma İndikatörü */
+@keyframes scroll-wheel {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  60% {
+    opacity: 0.2;
+    transform: translate(-50%, 8px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}
+
+/* İmleç Yanıp Sönme (Typing Effect) */
+@keyframes blink-cursor {
+  0%, 100% {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: var(--accent);
+  }
+}
+
+/* Daktilo Yazısı İmleci */
+.typing-text {
+  display: inline-block;
+  border-right: 2px solid var(--accent);
+  padding-right: 4px;
+  animation: blink-cursor 0.75s step-end infinite;
+  color: var(--text-bright);
+}
+
+/* Yüzen Öğe Efekti (Float) */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes pulse-ring {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.4), 0 0 25px rgba(108, 99, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(108, 99, 255, 0), 0 0 40px rgba(0, 200, 255, 0.35);
+  }
+}
+
+.floating-anim {
+  animation: float-slow 4.5s ease-in-out infinite;
+}
+
+.floating-reverse {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.pulsing-ring {
+  animation: pulse-ring 3.5s infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Hover & İnteraktif Geçişler
+   -------------------------------------------------------------------------- */
+.card {
+  will-change: transform, box-shadow;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.highlight-box {
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.highlight-box:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   Erişilebilirlik - Hareket Azaltma (prefers-reduced-motion)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .reveal-scroll {
+    animation: none !important;
+  }
+
+  .scroll-indicator .wheel {
+    animation: none !important;
+  }
+
+  .typing-text {
+    animation: none !important;
+    border-right-color: var(--accent);
+  }
+
+  .skill-fill {
+    transition: none !important;
+  }
+
+  .card:hover,
+  .highlight-box:hover,
+  .btn:hover {
+    transform: none !important;
+  }
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samet Karaöz - Frontend Developer Portfolyo">
+  <title>Samet Karaöz | Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">SK<span class="logo-dot">.</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Ana Sayfa</a></li>
+        <li><a href="about.html" class="nav-link">Hakkımda</a></li>
+        <li><a href="experience.html" class="nav-link">Deneyim</a></li>
+        <li><a href="projects.html" class="nav-link">Projeler</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">İletişim</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section" id="blog">
+      <div class="container">
+        <h2 class="section-heading reveal">Blog</h2>
+        <p class="section-subtitle reveal">Yazılım dünyasından notlarım</p>
+
+        <div class="blog-grid">
+          <!-- Blog Card 1 -->
+          <article class="blog-card card reveal" data-delay="100">
+            <div class="blog-card-date">15 Eylül 2026</div>
+            <h3 class="blog-card-title">Frontend'e Nasıl Başladım?</h3>
+            <p class="blog-card-excerpt">Web geliştirmeye ilk adımımı atarken neler yaşadım, hangi kaynakları kullandım ve bu süreçte öğrendiklerimi paylaşıyorum.</p>
+            <div class="blog-card-footer">
+              <span>5 dk okuma</span>
+              <a href="#" class="read-more">Devamını oku &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Blog Card 2 -->
+          <article class="blog-card card reveal" data-delay="200">
+            <div class="blog-card-date">8 Eylül 2026</div>
+            <h3 class="blog-card-title">Bootstrap vs. Tailwind: Hangisi?</h3>
+            <p class="blog-card-excerpt">İki popüler CSS framework'ünü kendi deneyimlerim üzerinden karşılaştırdım. Hangisi hangi proje için daha uygun?</p>
+            <div class="blog-card-footer">
+              <span>4 dk okuma</span>
+              <a href="#" class="read-more">Devamını oku &rarr;</a>
+            </div>
+          </article>
+
+          <!-- Blog Card 3 -->
+          <article class="blog-card card reveal" data-delay="300">
+            <div class="blog-card-date">1 Eylül 2026</div>
+            <h3 class="blog-card-title">İlk Projemi Yayınlamak</h3>
+            <p class="blog-card-excerpt">Motor Galerisi projemi GitHub'a yükleyip canlıya alma sürecinde yaşadıklarım ve aldığım dersler.</p>
+            <div class="blog-card-footer">
+              <span>3 dk okuma</span>
+              <a href="#" class="read-more">Devamını oku &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="index.html" class="footer-logo">SK<span class="logo-dot">.</span></a>
+        <p class="footer-text">&copy; 2026 Samet Karaöz</p>
+        <div class="footer-links">
+          <a href="https://github.com/samet-karaoz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="mailto:sametkaraoz0@gmail.com" aria-label="E-posta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>

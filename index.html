@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samet Karaöz - Yazılım Geliştirici (Web, Mobil, Backend) Portfolyo Web Sitesi">
+  <title>Samet Karaöz | Yazılım Geliştirici</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Üst Navigasyon (Glassmorphism Navbar) -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">SK<span class="logo-dot">.</span></a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link active">Ana Sayfa</a></li>
+        <li><a href="about.html" class="nav-link">Hakkımda</a></li>
+        <li><a href="experience.html" class="nav-link">Deneyim</a></li>
+        <li><a href="projects.html" class="nav-link">Projeler</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">İletişim</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menüyü aç">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 1. HERO BÖLÜMÜ -->
+    <section class="hero">
+      <canvas id="particles-canvas"></canvas>
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Sol Sütun: Başlık ve Metin -->
+          <div class="hero-content">
+            <div class="hero-greeting-badge reveal" data-delay="100">
+              <span class="pulse-dot"></span>
+              <span>Yeni Fırsatlara Açık • 20 Yaşında</span>
+            </div>
+
+            <h1 class="hero-name reveal" data-delay="200">Samet Karaöz</h1>
+
+            <div class="hero-title reveal" data-delay="300">
+              <span class="typing-text"></span>
+            </div>
+
+            <p class="hero-description reveal" data-delay="400">
+              Gürpınar İMKB Lisesi Yazılım Geliştirme ve Amasya Üniversitesi Bilgisayar Programcılığı mezunuyum. Web (React), mobil (React Native, Flutter) ve backend tarafında modern, kullanıcı odaklı ve yüksek performanslı çözümler geliştiriyorum.
+            </p>
+
+            <div class="hero-pills reveal" data-delay="450">
+              <span class="hero-pill">📍 Düzce & İstanbul</span>
+              <span class="hero-pill">🎓 Amasya Üni. Mezunu</span>
+              <span class="hero-pill">💼 Teknopark & Belediye Stajyeri</span>
+              <span class="hero-pill">📱 Web • Mobil • Backend</span>
+            </div>
+
+            <div class="hero-buttons reveal" data-delay="500">
+              <a href="#projects-preview" class="btn btn-primary">
+                <span>Projelerimi İncele</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+              </a>
+              <a href="contact.html" class="btn btn-outline">Bana Ulaşın</a>
+              <a href="about.html" class="btn btn-outline" style="border-color: rgba(255,255,255,0.15);">Hakkımda & CV</a>
+            </div>
+          </div>
+
+          <!-- Sağ Sütun: Profil Fotoğrafı ve Yüzen Rozetler -->
+          <div class="hero-image-col reveal" data-delay="250">
+            <div class="hero-avatar-wrapper">
+              <div class="hero-avatar-glow"></div>
+              <img src="assets/images/samet.png" alt="Samet Karaöz" class="hero-avatar-img pulsing-ring" width="250" height="250">
+              
+              <div class="floating-badge badge-top-left floating-anim">
+                <span>🚀</span>
+                <span>Genç Yazılımcı (20)</span>
+              </div>
+
+              <div class="floating-badge badge-bottom-right floating-reverse">
+                <span>⚡</span>
+                <span>Teknopark Stajyeri</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <span>Aşağı Kaydırın</span>
+      </div>
+    </section>
+
+    <!-- 2. HIZLI İSTATİSTİKLER & ÖZET -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 3rem;">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card reveal" data-delay="100">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Sektörel Staj Tecrübesi (Teknopark & Bld.)</div>
+          </div>
+          <div class="stat-card reveal" data-delay="200">
+            <div class="stat-number">12+</div>
+            <div class="stat-label">Teknoloji & Dil (Web, Mobil, DB)</div>
+          </div>
+          <div class="stat-card reveal" data-delay="300">
+            <div class="stat-number">B1</div>
+            <div class="stat-label">İngilizce Yeterlilik Seviyesi</div>
+          </div>
+          <div class="stat-card reveal" data-delay="400">
+            <div class="stat-number">20</div>
+            <div class="stat-label">Yaşında Dinamik & Hızlı Öğrenen</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. YETKİNLİK ALANLARIM -->
+    <section class="section" style="padding-top: 3rem;">
+      <div class="container">
+        <h2 class="section-heading reveal">Geliştirme Alanlarım</h2>
+        <p class="section-subtitle reveal">Tasarım konseptinden çalışan ürüne kadar odaklandığım ana teknolojiler</p>
+
+        <div class="focus-grid">
+          <!-- Web (Frontend) -->
+          <div class="focus-card card reveal" data-delay="100">
+            <span class="focus-icon">💻</span>
+            <h3 class="focus-title">Web (Frontend)</h3>
+            <p class="focus-desc">
+              HTML5, CSS3, modern JavaScript (ES6+) ve React ile hızlı, erişilebilir ve her cihazda kusursuz çalışan responsive web arayüzleri inşa ediyorum.
+            </p>
+            <div class="focus-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Bootstrap</span>
+            </div>
+          </div>
+
+          <!-- Mobil Geliştirme -->
+          <div class="focus-card card reveal" data-delay="200">
+            <span class="focus-icon">📱</span>
+            <h3 class="focus-title">Mobil Geliştirme</h3>
+            <p class="focus-desc">
+              React Native, Flutter ve Dart teknolojilerini kullanarak hem iOS hem de Android cihazlarda akıcı çalışan modern mobil uygulamalar üretiyorum.
+            </p>
+            <div class="focus-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Cross-Platform</span>
+            </div>
+          </div>
+
+          <!-- Backend & Veritabanı -->
+          <div class="focus-card card reveal" data-delay="300">
+            <span class="focus-icon">🗄️</span>
+            <h3 class="focus-title">Backend & Veritabanı</h3>
+            <p class="focus-desc">
+              PHP, C#, Python dilleriyle iş mantığı ve API geliştirme; SQL ve Firebase ile güvenilir veri saklama ve sorgulama yapıları kuruyorum.
+            </p>
+            <div class="focus-tags">
+              <span class="tag">Python</span>
+              <span class="tag">C#</span>
+              <span class="tag">PHP</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Firebase</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ÖNE ÇIKAN GERÇEK PROJELER -->
+    <section class="section" id="projects-preview" style="padding-top: 4rem;">
+      <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 class="section-heading reveal">Öne Çıkan Projeler</h2>
+            <p class="section-subtitle reveal" style="margin-bottom: 0;">GitHub'da açık kaynaklı olarak geliştirdiğim gerçek çalışmalar</p>
+          </div>
+          <a href="projects.html" class="btn btn-outline reveal" data-delay="150">Tüm Projeleri Gör &rarr;</a>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Proje 1: Motor Galerisi -->
+          <article class="project-card card reveal" data-delay="100">
+            <div class="project-card-image" style="background: linear-gradient(135deg, #1c1c28, #2a2a3c); height: 190px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🏍️</div>
+            <div class="project-card-content">
+              <h3 class="project-card-title">Motor Galerisi</h3>
+              <p class="project-card-desc">
+                HTML, CSS ve Bootstrap ile tasarlanmış modern motor galerisi web arayüzü. Mobil ve masaüstü cihazlarla tam uyumlu (responsive) ve temiz bir UI bileşen yapısı sunar.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Bootstrap</span>
+              </div>
+              <div class="project-card-links">
+                <a href="https://github.com/samet-karaoz/motor-galerisi" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Kaynak Kodu</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proje 2: Asphera Website -->
+          <article class="project-card card reveal" data-delay="200">
+            <div class="project-card-image" style="background: linear-gradient(135deg, #162032, #1f2d45); height: 190px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem;">🌐</div>
+            <div class="project-card-content">
+              <h3 class="project-card-title">Asphera Website</h3>
+              <p class="project-card-desc">
+                JavaScript ile zenginleştirilmiş kurumsal web arayüzü. Vercel üzerinde canlıda çalışan, dinamik içerik ve etkileşimli kullanıcı deneyimi sağlayan bir proje.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">Vercel</span>
+              </div>
+              <div class="project-card-links">
+                <a href="https://github.com/samet-karaoz/asphera-website" class="project-link" target="_blank" rel="noopener noreferrer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                  <span>Kaynak Kodu</span>
+                </a>
+                <a href="https://asphera-website.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer" style="color: var(--cyan);">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                  <span>Canlı Görünüm</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. İŞ DENEYİMİ & EĞİTİM ÖNİZLEME -->
+    <section class="section" style="padding-top: 4rem;">
+      <div class="container">
+        <h2 class="section-heading reveal">Deneyim & Stajlarım</h2>
+        <p class="section-subtitle reveal">Gerçek projelerde ve kurumsal ortamlarda edindiğim saha tecrübeleri</p>
+
+        <div class="timeline">
+          <div class="timeline-item reveal" data-delay="100">
+            <div class="timeline-date">Ağu 2026 — Eyl 2026</div>
+            <h3 class="timeline-title">Web Geliştirme Stajyeri</h3>
+            <div class="timeline-company">Getap Gelişim Takip Programı (Teknopark)</div>
+            <p class="timeline-desc">
+              Yazılım projelerinin uzaktan yönetim süreçlerini, profesyonel iş akışlarını ve sektörel işleyişi bizzat gözlemleyerek tecrübe edindim.
+            </p>
+          </div>
+
+          <div class="timeline-item reveal" data-delay="200">
+            <div class="timeline-date">Eyl 2023 — Haz 2024</div>
+            <h3 class="timeline-title">Stajyer</h3>
+            <div class="timeline-company">Beylikdüzü Belediyesi • İstanbul</div>
+            <p class="timeline-desc">
+              Gerçek kullanıcıların deneyimlediği bilgi işlem süreçlerine ve kurumsal yazılım operasyonlarına aktif destek verdim.
+            </p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 1rem;" class="reveal">
+          <a href="experience.html" class="btn btn-outline">Eğitim & Detaylı Zaman Çizelgesini İncele &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. İLETİŞİM ÇAĞRISI (CTA BANNER) -->
+    <section class="section" style="padding-top: 3rem; padding-bottom: 5rem;">
+      <div class="container">
+        <div class="cta-banner reveal" data-delay="150">
+          <h2 class="cta-title">Yeni Projelerde Birlikte Çalışalım</h2>
+          <p class="cta-text">
+            Web, mobil veya tam kapsamlı yazılım projeleriniz için ya da ekibinize dinamik bir geliştirici katmak isterseniz bir tık uzağınızdayım.
+          </p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">
+              <span>Hemen İletişime Geçin</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </a>
+            <a href="mailto:sametkaraozo@gmail.com" class="btn btn-outline">E-posta Gönder</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Altbilgi (Footer) -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="index.html" class="footer-logo">SK<span class="logo-dot">.</span></a>
+        <p class="footer-text">&copy; 2026 Samet Karaöz • Yazılım Geliştirici</p>
+        <div class="footer-links">
+          <a href="https://github.com/samet-karaoz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="mailto:sametkaraozo@gmail.com" aria-label="E-posta">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/particles.js" defer></script>
+</body>
+</html>
