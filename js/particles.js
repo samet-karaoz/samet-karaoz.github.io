@@ -1,6 +1,7 @@
 /**
  * Samet Karaöz - Portfolyo Web Sitesi
- * Zarif Arka Plan Parçacık Efekti (particles.js)
+ * Akıcı, Dingin ve Zarif Parçacık Sistemi (particles.js)
+ * Emil Kowalski & Modern Web Motion standartlarına uygun, düşük CPU yükü
  */
 
 (() => {
@@ -12,8 +13,17 @@
 
   let particles = [];
   let animationFrameId;
-  const PARTICLE_COUNT = 38; // Sade ve göz yormayan miktar
-  const MAX_DISTANCE = 110;
+  const PARTICLE_COUNT = 42; // Akıcı ve gözü yormayan dengeli miktar
+  const MAX_DISTANCE = 115;
+  const MOUSE_RADIUS = 130;
+
+  // Fare konumu ve etkileşim durumu
+  const mouse = {
+    x: null,
+    y: null,
+    active: false,
+    radius: MOUSE_RADIUS
+  };
 
   function resizeCanvas() {
     canvas.width = canvas.parentElement.offsetWidth;
@@ -23,12 +33,20 @@
   function initParticles() {
     particles = [];
     for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const isCyan = Math.random() > 0.6;
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        radius: Math.random() * 1.5 + 0.8
+        // Dingin ve yavaş akış hızları
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        baseRadius: Math.random() * 1.5 + 0.8,
+        radius: Math.random() * 1.5 + 0.8,
+        // Renk paleti (Mor ve Turkuaz tonları)
+        color: isCyan ? 'rgba(0, 200, 255,' : 'rgba(108, 99, 255,',
+        baseAlpha: Math.random() * 0.35 + 0.25,
+        pulseSpeed: Math.random() * 0.02 + 0.008,
+        pulseVal: Math.random() * Math.PI
       });
     }
   }
@@ -36,7 +54,7 @@
   function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Çizgi Bağlantıları
+    // Parçacıklar arası ağ çizgileri
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
@@ -44,33 +62,85 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < MAX_DISTANCE) {
-          const alpha = 0.09 * (1 - dist / MAX_DISTANCE);
+          const alpha = 0.08 * (1 - dist / MAX_DISTANCE);
           ctx.strokeStyle = `rgba(108, 99, 255, ${alpha})`;
-          ctx.lineWidth = 0.7;
+          ctx.lineWidth = 0.65;
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
           ctx.stroke();
         }
       }
+
+      // Fare ile parçacıklar arasındaki ince bağlantı
+      if (mouse.active && mouse.x !== null && mouse.y !== null) {
+        const mdx = particles[i].x - mouse.x;
+        const mdy = particles[i].y - mouse.y;
+        const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
+
+        if (mDist < mouse.radius) {
+          const mAlpha = 0.16 * (1 - mDist / mouse.radius);
+          ctx.strokeStyle = `rgba(0, 200, 255, ${mAlpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
     }
 
-    // Parçacık Noktaları
+    // Parçacık noktaları
     particles.forEach(p => {
-      ctx.fillStyle = 'rgba(108, 99, 255, 0.45)';
+      // Hafif nefes alma efekti
+      p.pulseVal += p.pulseSpeed;
+      const currentRadius = p.baseRadius + Math.sin(p.pulseVal) * 0.3;
+      const currentAlpha = p.baseAlpha + Math.sin(p.pulseVal) * 0.1;
+
+      ctx.fillStyle = `${p.color} ${Math.max(0.1, currentAlpha)})`;
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, Math.max(0.5, currentRadius), 0, Math.PI * 2);
       ctx.fill();
     });
   }
 
   function update() {
     particles.forEach(p => {
+      // Doğal yavaş hareket
       p.x += p.vx;
       p.y += p.vy;
 
-      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      // Fare etkileşimi: Nazik itme kuvveti
+      if (mouse.active && mouse.x !== null && mouse.y !== null) {
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < mouse.radius && dist > 0) {
+          const force = (mouse.radius - dist) / mouse.radius;
+          const pushX = (dx / dist) * force * 0.6;
+          const pushY = (dy / dist) * force * 0.6;
+          p.x += pushX;
+          p.y += pushY;
+        }
+      }
+
+      // Kenarlardan yumuşak sekme
+      if (p.x < 0) {
+        p.x = 0;
+        p.vx *= -1;
+      } else if (p.x > canvas.width) {
+        p.x = canvas.width;
+        p.vx *= -1;
+      }
+
+      if (p.y < 0) {
+        p.y = 0;
+        p.vy *= -1;
+      } else if (p.y > canvas.height) {
+        p.y = canvas.height;
+        p.vy *= -1;
+      }
     });
   }
 
@@ -80,17 +150,33 @@
     animationFrameId = requestAnimationFrame(loop);
   }
 
-  // İlk Başlatma
+  // Başlatma
   resizeCanvas();
   initParticles();
 
   if (isReducedMotion) {
-    draw(); // Yalnızca statik bir kare çiz
+    draw(); // Erişilebilirlik için tek sabit kare
   } else {
     loop();
   }
 
-  // Yeniden Boyutlandırma Dinleyicisi
+  // Fare Hareketi Dinleyicileri (Sadece masaüstü / pointer aygıtları için)
+  const heroSection = canvas.closest('.hero') || window;
+
+  heroSection.addEventListener('mousemove', (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+    mouse.active = true;
+  }, { passive: true });
+
+  heroSection.addEventListener('mouseleave', () => {
+    mouse.active = false;
+    mouse.x = null;
+    mouse.y = null;
+  }, { passive: true });
+
+  // Yeniden Boyutlandırma
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);

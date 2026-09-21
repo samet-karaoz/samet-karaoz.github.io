@@ -127,6 +127,63 @@
 }
 
 /* --------------------------------------------------------------------------
+   Akıcı Slow Ambient Arka Plan Animasyonları
+   -------------------------------------------------------------------------- */
+.ambient-orb-1 {
+  animation: float-ambient-1 24s ease-in-out infinite alternate;
+}
+
+.ambient-orb-2 {
+  animation: float-ambient-2 28s ease-in-out infinite alternate;
+}
+
+.ambient-orb-3 {
+  animation: float-ambient-3 20s ease-in-out infinite alternate;
+}
+
+@keyframes float-ambient-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(70px, 45px, 0) scale(1.08);
+  }
+  66% {
+    transform: translate3d(-50px, 80px, 0) scale(0.94);
+  }
+  100% {
+    transform: translate3d(40px, -30px, 0) scale(1.05);
+  }
+}
+
+@keyframes float-ambient-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  33% {
+    transform: translate3d(-65px, -50px, 0) scale(0.92);
+  }
+  66% {
+    transform: translate3d(45px, 65px, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-40px, 20px, 0) scale(1);
+  }
+}
+
+@keyframes float-ambient-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(60px, -45px, 0) scale(1.12);
+  }
+  100% {
+    transform: translate3d(-50px, 30px, 0) scale(0.9);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Hover & İnteraktif Geçişler
    -------------------------------------------------------------------------- */
 .card {
@@ -161,6 +218,15 @@
   }
 
   .reveal-scroll {
+    animation: none !important;
+  }
+
+  .ambient-orb-1,
+  .ambient-orb-2,
+  .ambient-orb-3,
+  .floating-anim,
+  .floating-reverse,
+  .pulsing-ring {
     animation: none !important;
   }
 
