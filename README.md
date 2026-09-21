@@ -2,6 +2,8 @@
 
 Bu proje, **Samet Karaöz** için özel olarak tasarlanmış ve kodlanmış modern, karanlık temalı (Dark Theme), yüksek performanslı ve çok sayfalı kişisel portfolyo web sitesidir.
 
+🌐 **Canlı Site:** [https://samet-karaoz.github.io/](https://samet-karaoz.github.io/)
+
 Herhangi bir harici kütüphane veya ağır framework (React, Vue, Tailwind vb.) gerektirmeden, **saf ve modern web standartları (Vanilla HTML5, CSS3, ES6+ JavaScript)** ile sıfırdan inşa edilmiştir.
 
 ---
