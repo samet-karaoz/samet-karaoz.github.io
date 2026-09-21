@@ -123,6 +123,11 @@
     margin-bottom: 1rem;
   }
 
+  .hero-avatar-wrapper {
+    width: 290px;
+    height: 290px;
+  }
+
   .hero-name {
     font-size: 2.5rem;
   }
@@ -169,22 +174,22 @@
   }
 
   .hero-avatar-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 240px;
+    height: 240px;
   }
 
   .badge-top-left {
-    left: -15px;
-    top: -5px;
-    font-size: 0.75rem;
-    padding: 0.45rem 0.8rem;
+    left: -10px;
+    top: 5px;
+    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
   }
 
   .badge-bottom-right {
-    right: -15px;
-    bottom: -5px;
-    font-size: 0.75rem;
-    padding: 0.45rem 0.8rem;
+    right: -10px;
+    bottom: 5px;
+    font-size: 0.78rem;
+    padding: 0.5rem 0.85rem;
   }
 
   .hero-name {
