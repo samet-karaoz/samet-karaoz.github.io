@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Samet Karaöz - Yazılım Geliştirici Özgeçmiş (CV)">
+  <title>Samet Karaöz | Özgeçmiş (CV)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ==========================================================================
+       Samet Karaöz - Profesyonel & Yazdırılabilir A4 CV Şablonu
+       ========================================================================== */
+    :root {
+      --primary: #1e293b;
+      --primary-accent: #4f46e5;
+      --secondary: #475569;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --border-light: #e2e8f0;
+      --bg-sidebar: #f8fafc;
+      --tag-bg: #e0e7ff;
+      --tag-text: #3730a3;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0b0b10;
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      line-height: 1.55;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Üst Aksiyon Çubuğu (Yazdırma ve Geri Dönüş) */
+    .action-bar {
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 0.85rem 1.25rem;
+      background: #16161f;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: #e2e4e9;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .action-bar a,
+    .action-bar button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-back {
+      background: transparent;
+      color: #b4b8c4;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-back:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .btn-print {
+      background: var(--primary-accent);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    .btn-print:hover {
+      background: #4338ca;
+      transform: translateY(-1px);
+    }
+
+    .btn-print:active,
+    .btn-back:active {
+      transform: scale(0.97);
+    }
+
+    /* A4 CV Kağıdı Konteyneri */
+    .cv-sheet {
+      width: 100%;
+      max-width: 860px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+    /* Sol Sütun (Sidebar) */
+    .cv-sidebar {
+      background: var(--bg-sidebar);
+      border-right: 1px solid var(--border-light);
+      padding: 2.2rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .cv-avatar-box {
+      text-align: center;
+    }
+
+    .cv-avatar {
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+      margin: 0 auto 0.75rem auto;
+      display: block;
+    }
+
+    .sidebar-section-title {
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid var(--border-light);
+      position: relative;
+    }
+
+    .sidebar-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 28px;
+      height: 2px;
+      background: var(--primary-accent);
+    }
+
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      font-size: 0.85rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      color: var(--secondary);
+      word-break: break-word;
+    }
+
+    .contact-item svg {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      color: var(--primary-accent);
+      margin-top: 2px;
+    }
+
+    .contact-item a {
+      color: var(--secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover {
+      color: var(--primary-accent);
+      text-decoration: underline;
+    }
+
+    .skills-group {
+      margin-bottom: 0.9rem;
+    }
+
+    .skills-group-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .cv-tag {
+      display: inline-block;
+      font-size: 0.73rem;
+      font-weight: 500;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      padding: 0.18rem 0.55rem;
+      border-radius: 999px;
+    }
+
+    .education-item {
+      margin-bottom: 0.9rem;
+    }
+
+    .education-degree {
+      font-weight: 600;
+      font-size: 0.86rem;
+      color: var(--primary);
+    }
+
+    .education-school {
+      font-size: 0.8rem;
+      color: var(--secondary);
+    }
+
+    .education-date {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.84rem;
+      color: var(--secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .lang-level {
+      font-weight: 600;
+      color: var(--primary-accent);
+    }
+
+    /* Sağ Ana İçerik (Main Content) */
+    .cv-main {
+      padding: 2.4rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+    }
+
+    .header-name {
+      font-family: var(--font-heading);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.15;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .header-role {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary-accent);
+      margin-bottom: 0.85rem;
+    }
+
+    .main-section-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 2px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      position: relative;
+    }
+
+    .main-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 36px;
+      height: 2px;
+      background: var(--primary-accent);
+    }
+
+    .summary-text {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* Deneyim ve Projeler Kartları */
+    .timeline-card {
+      position: relative;
+      padding-left: 1.2rem;
+      border-left: 2px solid var(--border-light);
+      margin-bottom: 1.2rem;
+    }
+
+    .timeline-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-card::before {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary-accent);
+      border: 2px solid #ffffff;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .timeline-date {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--primary-accent);
+    }
+
+    .timeline-company {
+      font-size: 0.83rem;
+      font-weight: 500;
+      color: var(--secondary);
+      margin-bottom: 0.45rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.84rem;
+      color: var(--secondary);
+      line-height: 1.55;
+    }
+
+    .project-card-cv {
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.9rem;
+      background: #fafafa;
+    }
+
+    .project-card-cv:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.35rem;
+    }
+
+    .project-name {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--primary);
+    }
+
+    .project-links-cv {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+    }
+
+    .project-links-cv a {
+      color: var(--primary-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .project-links-cv a:hover {
+      text-decoration: underline;
+    }
+
+    .project-desc-cv {
+      font-size: 0.83rem;
+      color: var(--secondary);
+      margin-bottom: 0.45rem;
+      line-height: 1.5;
+    }
+
+    .ref-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .ref-card {
+      border: 1px dashed var(--border-light);
+      padding: 0.65rem 0.85rem;
+      border-radius: 6px;
+      background: #f8fafc;
+      font-size: 0.82rem;
+    }
+
+    .ref-name {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .ref-title {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    /* ==========================================================================
+       YAZDIRMA VE PDF ÇIKTISI (Print Stylesheet)
+       ========================================================================== */
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+
+      .no-print {
+        display: none !important;
+      }
+
+      .cv-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 1cm 0.8cm;
+      }
+    }
+
+    /* Mobil Duyarlılık */
+    @media (max-width: 768px) {
+      .cv-sheet {
+        grid-template-columns: 1fr;
+      }
+
+      .cv-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-light);
+        padding: 1.8rem 1.4rem;
+      }
+
+      .cv-main {
+        padding: 1.8rem 1.4rem;
+      }
+
+      .ref-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Üst Aksiyon Çubuğu (Yalnızca ekranda görünür, yazdırmada gizlenir) -->
+  <aside class="action-bar no-print" aria-label="CV İşlemleri">
+    <a href="index.html" class="btn-back">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+      <span>Portfolyoya Dön</span>
+    </a>
+    <div style="display: flex; gap: 0.75rem; align-items: center;">
+      <span style="font-size: 0.82rem; color: #94a3b8; display: none;" id="tipText">💡 PDF olarak kaydetmek için Hedef: "PDF Olarak Kaydet" seçin</span>
+      <button onclick="window.print()" class="btn-print">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <span>PDF İndir / Yazdır</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- A4 CV Sayfası -->
+  <main class="cv-sheet" id="cv-sheet">
+
+    <!-- SOL SÜTUN (Sidebar) -->
+    <section class="cv-sidebar">
+      
+      <!-- Profil Fotoğrafı -->
+      <div class="cv-avatar-box">
+        <img src="assets/images/samet.png" alt="Samet Karaöz" class="cv-avatar" width="135" height="135">
+      </div>
+
+      <!-- İletişim Bilgileri -->
+      <div>
+        <h2 class="sidebar-section-title">İletişim</h2>
+        <ul class="contact-list">
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <a href="tel:+905397130357">+90 539 713 03 57</a>
+          </li>
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <a href="mailto:sametkaraozo@gmail.com">sametkaraozo@gmail.com</a>
+          </li>
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Aziziye Mah. Merkez / Düzce</span>
+          </li>
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <a href="https://samet-karaoz.github.io/" target="_blank">samet-karaoz.github.io</a>
+          </li>
+          <li class="contact-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <a href="https://github.com/samet-karaoz" target="_blank">github.com/samet-karaoz</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Teknik Beceriler -->
+      <div>
+        <h2 class="sidebar-section-title">Teknik Beceriler</h2>
+        
+        <div class="skills-group">
+          <div class="skills-group-title">Web (Frontend)</div>
+          <div class="tag-container">
+            <span class="cv-tag">HTML5</span>
+            <span class="cv-tag">CSS3</span>
+            <span class="cv-tag">JavaScript (ES6+)</span>
+            <span class="cv-tag">React</span>
+            <span class="cv-tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-group-title">Mobil Geliştirme</div>
+          <div class="tag-container">
+            <span class="cv-tag">React Native</span>
+            <span class="cv-tag">Flutter</span>
+            <span class="cv-tag">Dart</span>
+            <span class="cv-tag">Cross-Platform</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-group-title">Backend & Veritabanı</div>
+          <div class="tag-container">
+            <span class="cv-tag">Python</span>
+            <span class="cv-tag">C#</span>
+            <span class="cv-tag">PHP</span>
+            <span class="cv-tag">SQL</span>
+            <span class="cv-tag">Firebase</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <div class="skills-group-title">Araçlar & Metodoloji</div>
+          <div class="tag-container">
+            <span class="cv-tag">Git & GitHub</span>
+            <span class="cv-tag">VS Code</span>
+            <span class="cv-tag">Vercel</span>
+            <span class="cv-tag">Figma</span>
+            <span class="cv-tag">Responsive UI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eğitim -->
+      <div>
+        <h2 class="sidebar-section-title">Eğitim</h2>
+        
+        <div class="education-item">
+          <div class="education-degree">Bilgisayar Programcılığı</div>
+          <div class="education-school">Amasya Üniversitesi Merzifon MYO</div>
+          <div class="education-date">Önlisans • 2024 — 2026</div>
+        </div>
+
+        <div class="education-item" style="margin-bottom: 0;">
+          <div class="education-degree">Yazılım Geliştirme</div>
+          <div class="education-school">Gürpınar İMKB MTAL</div>
+          <div class="education-date">Lise • 2020 — 2024</div>
+        </div>
+      </div>
+
+      <!-- Diller -->
+      <div>
+        <h2 class="sidebar-section-title">Diller</h2>
+        <div class="lang-item">
+          <span>Türkçe</span>
+          <span class="lang-level">Ana Dil</span>
+        </div>
+        <div class="lang-item" style="margin-bottom: 0;">
+          <span>İngilizce</span>
+          <span class="lang-level">B1 (Orta Seviye)</span>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SAĞ SÜTUN (Ana İçerik) -->
+    <section class="cv-main">
+      
+      <!-- Başlık Bölümü -->
+      <div>
+        <h1 class="header-name">Samet Karaöz</h1>
+        <div class="header-role">Yazılım Geliştirici • Web & Mobil</div>
+        <p class="summary-text">
+          Gürpınar İMKB Lisesi Yazılım Geliştirme ve Amasya Üniversitesi Bilgisayar Programcılığı mezunuyum. Web tarafında modern JavaScript ve React; mobil tarafta React Native ve Flutter ile kullanıcı odaklı, performanslı ve responsive uygulamalar inşa ediyorum. Teknopark ve yerel yönetim bilgi işlem stajlarında profesyonel iş akışlarını deneyimledim. Sürekli öğrenmeye ve yeni teknolojilere hızla adapte olmaya odaklıyım.
+        </p>
+      </div>
+
+      <!-- İş Deneyimi & Stajlar -->
+      <div>
+        <h2 class="main-section-title">İş Deneyimi & Stajlar</h2>
+
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <span class="timeline-title">Web Geliştirme Stajyeri</span>
+            <span class="timeline-date">Ağu 2026 — Eyl 2026</span>
+          </div>
+          <div class="timeline-company">Getap Gelişim Takip Programı (Teknopark) • Uzaktan</div>
+          <p class="timeline-desc">
+            Teknopark bünyesindeki yazılım projelerinin uzaktan yönetim ve geliştirme süreçlerine katıldım. Takım çalışması, versiyon kontrolü (Git) ve profesyonel sektörel işleyiş standartlarını bizzat deneyimledim.
+          </p>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-header">
+            <span class="timeline-title">Bilgi İşlem & Yazılım Stajyeri</span>
+            <span class="timeline-date">Eyl 2023 — Haz 2024</span>
+          </div>
+          <div class="timeline-company">Beylikdüzü Belediyesi • İstanbul</div>
+          <p class="timeline-desc">
+            Geniş kullanıcı kitlelerine hizmet veren kurumsal belediye bilgi işlem operasyonlarında görev aldım. Sistem destek, veri akışı ve kurumsal iş süreçlerine aktif katkı sağladım.
+          </p>
+        </div>
+      </div>
+
+      <!-- Gerçek ve Doğrulanmış Projeler -->
+      <div>
+        <h2 class="main-section-title">Gerçek Projeler & Açık Kaynak</h2>
+
+        <!-- Proje 1 -->
+        <article class="project-card-cv">
+          <div class="project-title-row">
+            <span class="project-name">Kişisel Portfolyo Web Sitesi</span>
+            <div class="project-links-cv">
+              <a href="https://samet-karaoz.github.io/" target="_blank">Canlı Demo &rarr;</a>
+              <a href="https://github.com/samet-karaoz/samet-karaoz.github.io" target="_blank">GitHub &rarr;</a>
+            </div>
+          </div>
+          <p class="project-desc-cv">
+            Saf HTML5, modern CSS3 ve Vanilla JavaScript mimarisiyle sıfırdan geliştirilen, GitHub Pages üzerinde yayında olan portfolyo platformu. Donanım hızlandırmalı mikro-etkileşimler, akıcı parçacık canvas motoru ve tam responsive karanlık tema.
+          </p>
+          <div class="tag-container">
+            <span class="cv-tag">HTML5</span>
+            <span class="cv-tag">CSS3</span>
+            <span class="cv-tag">JavaScript (ES6+)</span>
+            <span class="cv-tag">Canvas API</span>
+            <span class="cv-tag">GitHub Pages</span>
+          </div>
+        </article>
+
+        <!-- Proje 2 -->
+        <article class="project-card-cv">
+          <div class="project-title-row">
+            <span class="project-name">Asphera Website</span>
+            <div class="project-links-cv">
+              <a href="https://asphera-website.vercel.app" target="_blank">Canlı Demo &rarr;</a>
+              <a href="https://github.com/samet-karaoz/asphera-website" target="_blank">GitHub &rarr;</a>
+            </div>
+          </div>
+          <p class="project-desc-cv">
+            SaaS ve kurumsal teknoloji ajansı kimliğini yansıtan, Vercel üzerinde canlıda çalışan modern web arayüzü. Dinamik içerik akışı, interaktif kullanıcı deneyimi ve estetik karanlık tema.
+          </p>
+          <div class="tag-container">
+            <span class="cv-tag">JavaScript</span>
+            <span class="cv-tag">HTML5</span>
+            <span class="cv-tag">CSS3</span>
+            <span class="cv-tag">Vercel</span>
+          </div>
+        </article>
+
+        <!-- Proje 3 -->
+        <article class="project-card-cv">
+          <div class="project-title-row">
+            <span class="project-name">Motor Galerisi</span>
+            <div class="project-links-cv">
+              <a href="https://github.com/samet-karaoz/motor-galerisi" target="_blank">GitHub &rarr;</a>
+            </div>
+          </div>
+          <p class="project-desc-cv">
+            Lüks motosiklet showroom konseptiyle hazırlanan galeri web arayüzü. Bootstrap ve CSS grid/flexbox yapılarıyla tüm ekran boyutlarında kusursuz çalışan katalog ve filtreleme düzeni.
+          </p>
+          <div class="tag-container">
+            <span class="cv-tag">HTML5</span>
+            <span class="cv-tag">CSS3</span>
+            <span class="cv-tag">Bootstrap</span>
+            <span class="cv-tag">Responsive UI</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Referanslar -->
+      <div>
+        <h2 class="main-section-title">Referanslar</h2>
+        <div class="ref-grid">
+          <div class="ref-card">
+            <div class="ref-name">Sertaç Erdağı</div>
+            <div class="ref-title">Getap Gelişim Takip Programı Kurucusu</div>
+          </div>
+          <div class="ref-card">
+            <div class="ref-name">Deniz Yıldız</div>
+            <div class="ref-title">Beylikdüzü Belediyesi • Şef</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
