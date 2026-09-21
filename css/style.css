@@ -964,8 +964,26 @@ ul {
 .project-card-image {
   margin: -1.75rem -1.75rem 1.25rem -1.75rem;
   width: calc(100% + 3.5rem);
+  height: 200px;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-secondary);
   user-select: none;
+}
+
+.project-card-image img,
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.05);
 }
 
 .project-card-content {
