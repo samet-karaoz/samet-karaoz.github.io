@@ -11,7 +11,7 @@
 
 ## 🎯 PROFESYONEL ÖZET
 
-Gürpınar İMKB Lisesi Yazılım Geliştirme ve Amasya Üniversitesi Bilgisayar Programcılığı mezunuyum. Web tarafında modern JavaScript (ES6+) ve React; mobil tarafta React Native, Flutter ve Dart ile kullanıcı odaklı, yüksek performanslı ve tam responsive arayüzler inşa ediyorum. Teknopark ve kurumsal belediye bilgi işlem stajlarında profesyonel iş akışlarını, ekip koordinasyonunu ve sürüm kontrol süreçlerini deneyimledim. Yeni teknolojileri hızla öğrenmeye ve temiz, bakımı kolay kod üretmeye odaklıyım.
+Gürpınar İMKB Lisesi Yazılım Geliştirme ve Amasya Üniversitesi Bilgisayar Programcılığı mezunuyum. Web tarafında modern JavaScript (ES6+) ve React; mobil tarafta React Native, Flutter ve Dart ile kullanıcı odaklı, performanslı ve responsive arayüzler inşa ediyorum. Geliştirme süreçlerimi Antigravity ve modern yapay zeka araçlarıyla destekleyerek hızlı prototipleme, temiz kod ve pratik teslimata odaklanıyorum. Teknopark ve kurumsal belediye bilgi işlem stajlarında profesyonel iş akışlarını, takım koordinasyonunu ve sürüm kontrol süreçlerini sahada deneyimledim.
 
 ---
 
@@ -50,10 +50,10 @@ Gürpınar İMKB Lisesi Yazılım Geliştirme ve Amasya Üniversitesi Bilgisayar
 
 ## 🛠️ TEKNİK BECERİLER
 
-- **Web (Frontend):** HTML5, CSS3, JavaScript (ES6+), React, Bootstrap, Responsive Web Tasarım, Glassmorphism UI
+- **Web (Frontend):** HTML5, CSS3, JavaScript (ES6+), React, Tailwind CSS (Temel), Bootstrap, Responsive Web Tasarım
 - **Mobil Geliştirme:** React Native, Flutter, Dart, Cross-Platform Mobil Arayüzler
 - **Backend & Veritabanı:** Python, C#, PHP, SQL, Firebase
-- **Araçlar & Metodoloji:** Git, GitHub, VS Code, Figma, Vercel, RESTful API entegrasyonu, Donanım Hızlandırmalı CSS Animasyonları
+- **Araçlar & Metodoloji:** Git, GitHub, Antigravity AI, VS Code, Figma, Vercel, RESTful API entegrasyonu
 
 ---
 
