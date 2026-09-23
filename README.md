@@ -1,4 +1,4 @@
-![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/samet-karaoz/samet-karaoz?utm_source=oss&utm_medium=github&utm_campaign=samet-karaoz%2Fsamet-karaoz&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/samet-karaoz/samet-karaoz.github.io?utm_source=oss&utm_medium=github&utm_campaign=samet-karaoz%2Fsamet-karaoz.github.io&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
 # 🚀 Samet Karaöz - Kişisel Portfolyo Web Sitesi
 
 Bu proje, **Samet Karaöz** için özel olarak tasarlanmış ve kodlanmış modern, karanlık temalı (Dark Theme), yüksek performanslı ve çok sayfalı kişisel portfolyo web sitesidir.
