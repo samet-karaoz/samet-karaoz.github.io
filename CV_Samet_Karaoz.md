@@ -3,7 +3,7 @@
 
 📍 Düzce & İstanbul, Türkiye  
 📞 +90 539 713 03 57  
-✉️ [sametkaraozo@gmail.com](mailto:sametkaraozo@gmail.com)  
+✉️ [sametkaraoz0@gmail.com](mailto:sametkaraoz0@gmail.com)  
 🌐 **Web Portfolyo:** [https://samet-karaoz.github.io/](https://samet-karaoz.github.io/)  
 🐙 **GitHub:** [https://github.com/samet-karaoz](https://github.com/samet-karaoz)  
 

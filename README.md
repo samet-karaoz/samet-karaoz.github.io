@@ -82,12 +82,12 @@ Bu site tamamen statik olduğu için GitHub Pages üzerinde 2 dakikada ücretsiz
 
 `contact.html` sayfasındaki form doğrudan Formspree (`https://formspree.io/f/xzezejwb`) uç noktasına bağlanmıştır.
 - Ziyaretçiler formu doldurup gönderdiğinde sayfa yenilenmeden (AJAX ile) anında bildirim alır.
-- Gönderilen mesajlar doğrudan `sametkaraozo@gmail.com` e-posta adresinize düşecektir.
+- Gönderilen mesajlar doğrudan `sametkaraoz0@gmail.com` e-posta adresinize düşecektir.
 
 ---
 
 ## 👤 İletişim & Sosyal Medya
 - **Geliştirici:** Samet Karaöz
 - **GitHub:** [@samet-karaoz](https://github.com/samet-karaoz)
-- **E-posta:** sametkaraozo@gmail.com
+- **E-posta:** sametkaraoz0@gmail.com
 - **Telefon:** +90 539 713 03 57
