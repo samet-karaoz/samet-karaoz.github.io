@@ -468,7 +468,7 @@
        ========================================================================== */
     @page {
       size: A4 portrait;
-      margin: 8mm 8mm;
+      margin: 0;
     }
 
     @media print {
@@ -477,7 +477,7 @@
         padding: 0 !important;
         margin: 0 !important;
         width: 100% !important;
-        height: auto !important;
+        height: 100% !important;
         overflow: visible !important;
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
@@ -490,28 +490,29 @@
       .cv-sheet {
         max-width: 100% !important;
         width: 100% !important;
+        min-height: 100vh !important;
         box-shadow: none !important;
         border-radius: 0 !important;
         border: none !important;
-        grid-template-columns: 250px 1fr !important;
+        grid-template-columns: 260px 1fr !important;
         page-break-inside: avoid !important;
         break-inside: avoid !important;
       }
 
       .cv-sidebar {
-        padding: 1.3rem 1.15rem !important;
-        gap: 1.1rem !important;
+        padding: 1.6rem 1.3rem !important;
+        gap: 1.2rem !important;
       }
 
       .cv-avatar {
-        width: 105px !important;
-        height: 105px !important;
-        margin: 0 auto 0.35rem auto !important;
+        width: 115px !important;
+        height: 115px !important;
+        margin: 0 auto 0.4rem auto !important;
       }
 
       .cv-main {
-        padding: 1.35rem 1.45rem !important;
-        gap: 1rem !important;
+        padding: 1.6rem 1.8rem !important;
+        gap: 1.1rem !important;
       }
 
       .project-card-cv,
